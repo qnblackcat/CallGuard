@@ -1,0 +1,29 @@
+# CallGuard
+
+Silently block incoming calls by **number prefix** (e.g. `0285671`), so a whole range is covered without listing each number.
+
+- Add the prefixes you want to block in Settings → CallGuard. A prefix needs at least 3 digits, with no upper length limit.
+- `+84…` and `84…` are normalized to `0…` before matching.
+- Numbers in Contacts are always let through (can be turned off with "Block contacts too").
+- Numbers you have called before (in Recents) are also let through (can be turned off).
+- Confirm before calling from Keypads / Recents / Favorites
+
+## Build
+
+<details>
+<summary>Build instructions</summary>
+
+Build with Theos (roothide fork).
+
+```sh
+make clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+make clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
+```
+
+</details>
+
+## License
+
+CallGuard is licensed under the GNU General Public License, version 3 only. See [LICENSE](LICENSE).
+
+© 2026 Qn (Đạt Nguyễn)

@@ -1,0 +1,5 @@
+#!/bin/sh
+# The tweak hooks callservicesd and the Phone app, which Sileo does not restart: an already running one would keep going
+# without (or with the old) tweak. launchd relaunches callservicesd; the Phone app just starts fresh next time.
+killall callservicesd MobilePhone 2>/dev/null
+exit 0

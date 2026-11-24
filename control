@@ -1,0 +1,9 @@
+Package: com.qn.callguard
+Name: CallGuard
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Version: 0.0.3
+Architecture: iphoneos-arm
+Description: Silently blocks incoming calls from a whole range of numbers by prefix
+Maintainer: Qn <qnblackcat@gmail.com>
+Author: Qn <qnblackcat@gmail.com>
+Section: Tweaks

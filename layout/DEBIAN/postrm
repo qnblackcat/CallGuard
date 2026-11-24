@@ -1,0 +1,16 @@
+#!/bin/sh
+case "$1" in
+	remove|purge)
+		killall callservicesd MobilePhone 2>/dev/null
+		# debug logs (see CGLogDirectories in CGLog.m): rootless keeps them under /var/jb,
+		# roothide inside jbroot (the shell already runs there), the last one is a real system path
+		for root in "" /var/jb "$JBROOT" /rootfs; do
+			rm -rf "$root/var/mobile/Library/Caches/CallGuard" \
+				"$root/var/mobile/Library/CallGuard" \
+				"$root/var/tmp/CallGuard" \
+				"$root/var/mobile/tmp/CallGuard" \
+				"$root/private/var/mobile/tmp/CallGuard" 2>/dev/null
+		done
+		;;
+esac
+exit 0
