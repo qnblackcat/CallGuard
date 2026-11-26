@@ -10,7 +10,9 @@
 @interface CGRootListController : PSListController
 @end
 
-@implementation CGRootListController
+@implementation CGRootListController {
+	NSArray<PSSpecifier *> *_logRows;   // share/copy/clear buttons, shown only while Debug is on
+}
 
 - (NSArray *)specifiers {
 	if (!_specifiers) {
@@ -25,12 +27,32 @@
 			NSString *icon = [specifier propertyForKey:@"cgIcon"];
 			if (icon && specifier.name.length) specifier.name = [NSString stringWithFormat:@"%@ %@", icon, specifier.name];
 		}
+		// the log buttons only make sense while Debug is on
+		NSMutableArray *logRows = [NSMutableArray array];
+		for (NSString *identifier in @[@"shareLog", @"copyLog", @"clearLog"]) {
+			PSSpecifier *row = [self specifierForID:identifier];
+			if (row) [logRows addObject:row];
+		}
+		_logRows = logRows;
+		if (!CGPrefBool(@"Debug", NO)) [_specifiers removeObjectsInArray:_logRows];
 		NSUInteger index = group ? [_specifiers indexOfObject:group] + 1 : _specifiers.count;
 		for (NSString *prefix in CGPrefPrefixes()) {
 			[_specifiers insertObject:[self rowForPrefix:prefix] atIndex:index++];
 		}
 	}
 	return _specifiers;
+}
+
+// Show or hide the log buttons when the Debug switch is flipped
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier *)specifier {
+	[super setPreferenceValue:value specifier:specifier];
+	if (![specifier.identifier isEqualToString:@"debugSwitch"] || !_logRows.count) return;
+	PSSpecifier *debugRow = [self specifierForID:@"debugSwitch"];
+	if ([value boolValue]) {
+		if (![self specifierForID:@"shareLog"]) [self insertContiguousSpecifiers:_logRows afterSpecifier:debugRow animated:YES];
+	} else {
+		[self removeContiguousSpecifiers:_logRows animated:YES];
+	}
 }
 
 - (PSSpecifier *)rowForPrefix:(NSString *)prefix {

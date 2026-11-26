@@ -143,12 +143,16 @@
 			<false/>
 			<key>defaults</key>
 			<string>com.qn.callguard</string>
+			<key>id</key>
+			<string>debugSwitch</string>
 			<key>key</key>
 			<string>Debug</string>
 			<key>label</key>
 			<string>Debug</string>
 		</dict>
 		<dict>
+			<key>id</key>
+			<string>shareLog</string>
 			<key>action</key>
 			<string>shareDebugLog</string>
 			<key>cell</key>
@@ -157,6 +161,8 @@
 			<string>SHAREDEBUGLOG_LABEL</string>
 		</dict>
 		<dict>
+			<key>id</key>
+			<string>copyLog</string>
 			<key>action</key>
 			<string>copyDebugLog</string>
 			<key>cell</key>
@@ -165,6 +171,8 @@
 			<string>COPYDEBUGLOG_LABEL</string>
 		</dict>
 		<dict>
+			<key>id</key>
+			<string>clearLog</string>
 			<key>action</key>
 			<string>clearDebugLog</string>
 			<key>cell</key>
