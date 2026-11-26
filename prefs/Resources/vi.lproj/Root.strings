@@ -15,9 +15,9 @@
 "COPYDEBUGLOG_LABEL" = "Copy Debug Log";
 "CLEARDEBUGLOG_LABEL" = "Clear Debug Log";
 "ABOUT_LABEL" = "About";
-"ABOUT_FOOTER" = "© 2026 Qn (Đạt Nguyễn)";
-"TWITTER_LABEL" = "Twitter";
-"SOURCECODE_LABEL" = "Mã nguồn";
+"ABOUT_FOOTER" = "© 2026 Qn (Đạt Nguyễn)\nGiấy phép bản quyền GNU GPLv3";
+"TWITTER_LABEL" = "Twitter (Đạt)";
+"SOURCECODE_LABEL" = "Mã nguồn (GitHub)";
 "OTHER_LABEL" = "Cài đặt khác";
 "OTHER_FOOTER" = "Hiện hộp thoại xác nhận trước khi gọi từ Bàn phím, Gần đây hoặc Mục ưa thích. Cuộc gọi bắt đầu từ chỗ khác (Danh bạ, Siri…) không bị ảnh hưởng";
 "CONFIRMCALLS_LABEL" = "Xác nhận khi gọi";

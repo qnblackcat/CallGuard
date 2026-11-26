@@ -15,9 +15,9 @@
 "COPYDEBUGLOG_LABEL" = "Copy Debug Log";
 "CLEARDEBUGLOG_LABEL" = "Clear Debug Log";
 "ABOUT_LABEL" = "About";
-"ABOUT_FOOTER" = "© 2026 Qn (Đạt Nguyễn)";
-"TWITTER_LABEL" = "Twitter";
-"SOURCECODE_LABEL" = "Source Code";
+"ABOUT_FOOTER" = "© 2026 Qn (Đạt Nguyễn)\nLicensed under the GNU GPLv3";
+"TWITTER_LABEL" = "Twitter (Đạt)";
+"SOURCECODE_LABEL" = "Source Code (GitHub)";
 "OTHER_LABEL" = "Other settings";
 "OTHER_FOOTER" = "Show a confirmation alert before placing a call from Keypad, Recents or Favorites. Calls started from anywhere else (Contacts, Siri…) are not affected.";
 "CONFIRMCALLS_LABEL" = "Confirm before calling";
